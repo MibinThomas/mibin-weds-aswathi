@@ -3,6 +3,7 @@
 import LoadingCurtain from "@/components/LoadingCurtain";
 import PetalBackground from "@/components/PetalBackground";
 import AudioPlayer from "@/components/AudioPlayer";
+import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import StorySection from "@/components/StorySection";
@@ -15,6 +16,9 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* Custom Romantic Mouse Pointer */}
+      <CustomCursor />
+
       {/* Intro Curtain */}
       <LoadingCurtain />
 
