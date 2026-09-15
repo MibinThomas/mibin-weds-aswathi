@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e07a5f" />
+      <stop offset="50%" stop-color="#d4af37" />
+      <stop offset="100%" stop-color="#6b2d3e" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#e07a5f" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Heart Background -->
+  <path 
+    d="M 32 58 C 32 58 6 36 6 20 C 6 10 14 3 24 3 C 29 3 32 7 32 7 C 32 7 35 3 40 3 C 50 3 58 10 58 20 C 58 36 32 58 32 58 Z" 
+    fill="url(#heartGrad)" 
+    filter="url(#glow)"
+  />
+
+  <!-- Subtle Inner Shimmer -->
+  <path 
+    d="M 24 7 C 17 7 11 12 10 19 C 10 21 11 20 13 17 C 16 13 20 10 25 9 C 26 9 25 7 24 7 Z" 
+    fill="#ffffff" 
+    opacity="0.4"
+  />
+
+  <!-- Monogram text -->
+  <text 
+    x="32" 
+    y="35" 
+    font-family="Georgia, serif" 
+    font-size="14" 
+    font-weight="bold" 
+    fill="#ffffff" 
+    text-anchor="middle"
+    letter-spacing="0.5"
+  >M&amp;A</text>
+</svg>

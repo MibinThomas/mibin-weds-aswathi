@@ -26,12 +26,18 @@ const script = Great_Vibes({
 export const metadata: Metadata = {
   title: "Mibin & Aswathi (Achu) | Wedding Invitation",
   description: "We invite you to celebrate the wedding of Mibin and Aswathi (Achu) on December 28, 2026 at St. Sebastian's Church, Koodaranji.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
     title: "Mibin & Aswathi | Wedding Invitation",
     description: "Join us in celebrating our 8-year love story & wedding on 28th December 2026.",
     type: "website",
   },
 };
+
 
 export default function RootLayout({
   children,
