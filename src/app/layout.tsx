@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Great_Vibes, Plus_Jakarta_Sans } from "next/font/google";
+import {
+  Cormorant_Garamond,
+  Great_Vibes,
+  Plus_Jakarta_Sans,
+} from "next/font/google";
 import "./globals.css";
+import BackgroundMusic from "@/components/BackgroundMusic";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-serif",
@@ -24,20 +29,21 @@ const script = Great_Vibes({
 });
 
 export const metadata: Metadata = {
-  title: "Mibin & Aswathi (Achu) | Wedding Invitation",
-  description: "We invite you to celebrate the wedding of Mibin and Aswathi (Achu) on December 28, 2026 at St. Sebastian's Church, Koodaranji.",
+  title: "Aswathi & Mibin | A Beautiful Beginning",
+  description:
+    "Join Aswathi Surendran and Mibin Thomas as they begin their forever. 28 December 2026, 5:00 PM at St. Sebastian’s Church, Koodaranji, Calicut, Kerala.",
   icons: {
     icon: "/icon.svg",
     shortcut: "/icon.svg",
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "Mibin & Aswathi | Wedding Invitation",
-    description: "Join us in celebrating our 8-year love story & wedding on 28th December 2026.",
+    title: "Aswathi Surendran & Mibin Thomas | Wedding Invitation",
+    description:
+      "With the love and blessings of our families. Join us on 28 December 2026 at 5:00 PM, St. Sebastian’s Church, Koodaranji.",
     type: "website",
   },
 };
-
 
 export default function RootLayout({
   children,
@@ -47,12 +53,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${cormorant.variable} ${jakarta.variable} ${script.variable} scroll-smooth h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-background text-foreground transition-colors duration-500">
+        <BackgroundMusic />
         {children}
       </body>
     </html>
   );
 }
-

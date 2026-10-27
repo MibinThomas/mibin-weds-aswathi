@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Aswathi and Mibin//Wedding Invitation//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aswathi-mibin-20261228@wedding-invitation
+DTSTAMP:20261027T000000Z
+DTSTART:20261228T113000Z
+SUMMARY:Aswathi Surendran & Mibin Thomas - Wedding
+DESCRIPTION:Join us as we begin our forever and celebrate this unforgettable
+ moment. The wedding ceremony begins at 5:00 PM Indian Standard Time.
+LOCATION:St. Sebastian's Church\, Koodaranji P.O.\, Calicut\, Kerala\, India
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
