@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { siteUrl, weddingShareImage } from "@/lib/site";
 import {
   Cormorant_Garamond,
   Plus_Jakarta_Sans,
@@ -21,19 +22,27 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: siteUrl,
   title: "Aswathi & Mibin | A Beautiful Beginning",
   description:
     "Join Aswathi Surendran and Mibin Thomas as they begin their forever. 28 December 2026, 5:00 PM at St. Sebastian’s Church, Koodaranji, Calicut, Kerala.",
   icons: {
     icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aswathi & Mibin | A Beautiful Beginning",
+    images: [weddingShareImage],
   },
   openGraph: {
     title: "Aswathi Surendran & Mibin Thomas | Wedding Invitation",
     description:
       "With the love and blessings of our families. Join us on 28 December 2026 at 5:00 PM, St. Sebastian’s Church, Koodaranji.",
     type: "website",
+    url: "/",
+    images: [weddingShareImage],
   },
 };
 

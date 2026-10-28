@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { weddingShareImage } from "@/lib/site";
 
 export type InvitationSide = "groom" | "bride";
 
@@ -57,6 +58,19 @@ export function getInvitationMetadata(side: InvitationSide): Metadata {
   return {
     title,
     description,
-    openGraph: { title, description, type: "website", locale: "en_IN" },
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      locale: "en_IN",
+      url: invitation.path,
+      images: [weddingShareImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [weddingShareImage],
+    },
   };
 }
