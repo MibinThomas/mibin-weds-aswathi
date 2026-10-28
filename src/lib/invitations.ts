@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { weddingShareImage } from "@/lib/site";
+import { groomShareImage, weddingShareImage } from "@/lib/site";
 
 export type InvitationSide = "groom" | "bride";
 
@@ -54,6 +54,7 @@ export function getInvitation(side: InvitationSide) {
 export function getInvitationMetadata(side: InvitationSide): Metadata {
   const invitation = getInvitation(side);
   const title = `${invitation.heading} | ${invitation.label}`;
+  const shareImage = side === "groom" ? groomShareImage : weddingShareImage;
   const description = `With the love and blessings of ${invitation.family.label.toLowerCase()}, join us on 28 December 2026 at 5:00 PM, St. Sebastian’s Church, Koodaranji, Calicut, Kerala.`;
   return {
     title,
@@ -64,13 +65,13 @@ export function getInvitationMetadata(side: InvitationSide): Metadata {
       type: "website",
       locale: "en_IN",
       url: invitation.path,
-      images: [weddingShareImage],
+      images: [shareImage],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [weddingShareImage],
+      images: [shareImage],
     },
   };
 }

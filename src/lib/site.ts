@@ -7,3 +7,9 @@ export const weddingShareImage = {
   alt: "Aswathi & Mibin — A Beautiful Beginning. 28 December 2026, 5:00 PM, Koodaranji, Kerala.",
   type: "image/jpeg",
 };
+
+export const groomShareImage = {
+  ...weddingShareImage,
+  url: "/images/groom-og.jpg",
+  alt: "Mibin & Aswathi — With love from the groom's family. 28 December 2026, 5:00 PM, Koodaranji, Kerala.",
+};
