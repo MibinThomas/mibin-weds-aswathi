@@ -5,7 +5,7 @@
   --foreground: #27455d;
   --ink: #27455d;
   --blue: #385f7d;
-  --muted: #6c7c86;
+  --muted: #506370;
   --line: #d9dfdf;
   --powder: #eaf0f2;
   --paper: #fcfbf7;
@@ -147,7 +147,7 @@ section[id] {
     gap 0.2s;
 }
 .text-link:hover {
-  color: #628ba5;
+  color: #456b85;
   gap: 17px;
 }
 .section-heading {
@@ -206,7 +206,7 @@ section[id] {
   flex-shrink: 0;
 }
 .brand-monogram {
-  font-family: var(--font-script), cursive;
+  font-family: var(--font-serif), Georgia, serif;
   font-size: 38px;
   line-height: 1;
   letter-spacing: -2px;
@@ -234,7 +234,7 @@ section[id] {
   position: relative;
 }
 .desktop-nav a:hover {
-  color: #7396b0;
+  color: #456b85;
 }
 .desktop-nav a:after {
   content: "";
@@ -322,7 +322,7 @@ section[id] {
   font-family: var(--font-serif), serif;
   font-size: 17px;
   margin: 23px 0 18px;
-  color: #657984;
+  color: #4e626f;
 }
 .hero h1 {
   position: relative;
@@ -333,7 +333,7 @@ section[id] {
   gap: 0;
 }
 .couple-name {
-  font-family: var(--font-script), cursive;
+  font-family: var(--font-serif), Georgia, serif;
   font-size: clamp(65px, 6.7vw, 94px);
   font-weight: 400;
   line-height: 0.98;
@@ -350,10 +350,10 @@ section[id] {
   text-transform: uppercase;
 }
 .name-and {
-  font-family: var(--font-script), cursive;
+  font-family: var(--font-serif), Georgia, serif;
   font-size: 42px;
   line-height: 1.15;
-  color: #8297a5;
+  color: #536f82;
   margin-top: 8px;
   margin-bottom: 5px;
 }
@@ -362,7 +362,7 @@ section[id] {
   font-size: 18px;
   line-height: 1.45;
   margin-top: 25px;
-  color: #5d7180;
+  color: #495f70;
 }
 .hero-date {
   display: flex;
@@ -434,7 +434,7 @@ section[id] {
   margin-top: 142px;
 }
 .arch-script {
-  font-family: var(--font-script), cursive;
+  font-family: var(--font-serif), Georgia, serif;
   font-size: 55px;
   margin-top: 4px;
 }
@@ -498,7 +498,7 @@ section[id] {
   font-family: var(--font-serif), serif;
   font-style: italic;
   font-size: 15px;
-  color: #617b8d;
+  color: #486579;
 }
 .art-caption span {
   height: 1px;
@@ -516,7 +516,7 @@ section[id] {
   text-transform: uppercase;
   font-size: 8px;
   letter-spacing: 2px;
-  color: #788995;
+  color: #536977;
 }
 .date-ribbon {
   background: #eaf0f2;
@@ -528,7 +528,7 @@ section[id] {
   border-block: 1px solid #dce5e8;
 }
 .date-ribbon > span {
-  font-family: var(--font-script), cursive;
+  font-family: var(--font-serif), Georgia, serif;
   font-size: 24px;
 }
 .date-ribbon > p {
@@ -576,7 +576,7 @@ section[id] {
 .calendar-week {
   font-size: 8px;
   letter-spacing: 1px;
-  color: #8796a0;
+  color: #536977;
   margin-bottom: 12px;
 }
 .calendar-days > span {
@@ -598,11 +598,11 @@ section[id] {
   max-width: none;
 }
 .calendar-sheet .calendar-footnote {
-  font-family: var(--font-script), cursive;
+  font-family: var(--font-serif), Georgia, serif;
   font-size: 23px;
   text-align: center;
   margin-top: 22px;
-  color: #6f8b9d;
+  color: #4d6c82;
 }
 .ceremony-icon {
   color: #718fa3;
@@ -649,7 +649,7 @@ section[id] {
 }
 .countdown-wrap > .eyebrow {
   font-size: 8px;
-  color: #768c9b;
+  color: #506b7d;
 }
 .countdown {
   display: grid;
@@ -722,12 +722,12 @@ section[id] {
 }
 .family h3 > span {
   font-style: italic;
-  color: #7591a3;
+  color: #4d6c82;
 }
 .family > p:not(.eyebrow) {
   font-size: 11px;
   line-height: 2.2;
-  color: #597184;
+  color: #465f72;
 }
 .family-rule {
   width: 28px;
@@ -749,7 +749,7 @@ section[id] {
   color: #7c98ab;
 }
 .script-text {
-  font-family: var(--font-script), cursive;
+  font-family: var(--font-serif), Georgia, serif;
   font-size: 34px;
   margin: 9px 0 12px;
 }
@@ -759,7 +759,7 @@ section[id] {
 }
 .little-angels > p > span {
   padding: 0 12px;
-  color: #869ca9;
+  color: #536f82;
 }
 .little-angels > small {
   display: block;
@@ -767,7 +767,7 @@ section[id] {
   font-family: var(--font-serif), serif;
   font-style: italic;
   font-size: 15px;
-  color: #6d8390;
+  color: #506977;
 }
 .family-floral-left,
 .family-floral-right {
@@ -825,10 +825,10 @@ section[id] {
   font-size: 150px;
   line-height: 0.8;
   font-weight: 300;
-  color: #577c96;
+  color: #456881;
 }
 .story-circle > p {
-  font-family: var(--font-script), cursive;
+  font-family: var(--font-serif), Georgia, serif;
   font-size: 31px;
   margin-top: 11px;
 }
@@ -854,12 +854,12 @@ section[id] {
 .story-copy > p:not(.eyebrow) {
   font-size: 12px;
   line-height: 2;
-  color: #6b7c87;
+  color: #506370;
   margin-bottom: 13px;
 }
 .story-signature {
   display: block;
-  font-family: var(--font-script), cursive;
+  font-family: var(--font-serif), Georgia, serif;
   font-size: 34px;
   margin: 26px 0 21px;
 }
@@ -883,7 +883,7 @@ section[id] {
 .wishes-copy > p:not(.eyebrow):not(.storage-note) {
   font-size: 12px;
   line-height: 2;
-  color: #647d8d;
+  color: #4d6678;
   max-width: 370px;
 }
 .ornament {
@@ -901,7 +901,7 @@ section[id] {
 .storage-note {
   font-size: 9px;
   line-height: 1.8;
-  color: #68808d;
+  color: #506977;
 }
 .wish-form {
   padding: 36px;
@@ -941,7 +941,8 @@ section[id] {
 }
 .wish-form input::placeholder,
 .wish-form textarea::placeholder {
-  color: #8c9ba4;
+  color: #596d7a;
+  opacity: 1;
 }
 .wish-form textarea {
   min-height: 110px;
@@ -960,7 +961,7 @@ section[id] {
   font-size: 10px;
   line-height: 1.8;
   margin-top: 14px;
-  color: #547387;
+  color: #436276;
 }
 .form-status:empty {
   display: none;
@@ -1088,7 +1089,7 @@ section[id] {
 }
 .closing-signature {
   display: block;
-  font-family: var(--font-script), cursive;
+  font-family: var(--font-serif), Georgia, serif;
   font-size: 43px;
   margin: 9px 0 28px;
 }
@@ -1106,12 +1107,12 @@ section[id] {
   border-top: 1px solid #d9e2e6;
 }
 .footer-monogram {
-  font-family: var(--font-script), cursive;
+  font-family: var(--font-serif), Georgia, serif;
   font-size: 30px;
 }
 .site-footer > p {
   font-size: 9px;
-  color: #81909a;
+  color: #536977;
 }
 .site-footer > span {
   display: flex;
@@ -1219,19 +1220,7 @@ section[id] {
   letter-spacing: 2px;
   line-height: 1.3;
   margin: 19px 0;
-  color: #8c795b;
-}
-.invitation-switch {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  min-height: 38px;
-  font-size: 9px;
-  color: var(--muted);
-}
-.invitation-switch:hover {
-  color: var(--blue);
+  color: #705c3e;
 }
 .family-line {
   display: block;
@@ -1240,7 +1229,7 @@ section[id] {
   font-family: var(--font-serif), Georgia, serif;
   font-style: italic;
   font-size: 15px;
-  color: #7c795f;
+  color: #625e45;
   margin-top: 9px;
 }
 .closing-section > .cultural-blessing {
@@ -1324,9 +1313,9 @@ section[id] {
   box-shadow: 5px 8px 0 #e4ecee;
 }
 .choice-initial {
-  font-family: var(--font-script), cursive;
+  font-family: var(--font-serif), Georgia, serif;
   font-size: 35px;
-  color: #8aa4b5;
+  color: #536f82;
   line-height: 1;
   margin-bottom: 18px;
 }
@@ -1347,7 +1336,7 @@ section[id] {
 .invitation-choice h2 > span {
   font-size: 15px;
   font-style: italic;
-  color: #8c795b;
+  color: #705c3e;
   letter-spacing: 0;
 }
 .choice-parents {
@@ -1383,7 +1372,7 @@ section[id] {
 }
 .welcome-date > span:not(.welcome-venue) {
   margin-inline: 8px;
-  color: #a08a62;
+  color: #75613f;
 }
 .welcome-venue {
   font-size: 9px;
@@ -1397,7 +1386,7 @@ section[id] {
   padding: 23px;
   border-top: 1px solid var(--line);
   background: #edf2f3;
-  color: #738b9a;
+  color: #506b7d;
 }
 .welcome-footer > p {
   font-size: 9px;
@@ -2216,14 +2205,6 @@ section[id] {
     padding-left: 9px;
   }
 }
-@media (max-width: 1100px) {
-  .invitation-switch > span {
-    display: none;
-  }
-  .invitation-switch {
-    width: 34px;
-  }
-}
 @media (max-width: 600px) {
   .welcome-header {
     padding: 20px;
@@ -2320,37 +2301,51 @@ section[id] {
   .header-actions {
     gap: 2px;
   }
-  .invitation-switch {
-    width: 30px;
-  }
 }
 .background-music-toggle {
   position: fixed;
-  bottom: 22px;
-  left: 22px;
+  bottom: max(18px, env(safe-area-inset-bottom));
+  left: max(18px, env(safe-area-inset-left));
   z-index: 35;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  min-height: 43px;
-  padding: 12px 16px;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 10px 13px;
   border: 1px solid #bdcdd6;
-  border-radius: 0;
+  border-radius: 999px;
   background: #fcfbf7f2;
   color: var(--blue);
-  box-shadow: 0 3px 14px #27455d0c;
+  box-shadow: 0 3px 14px #27455d12;
   font-size: 10px;
   backdrop-filter: blur(10px);
+  transition: background 0.2s, color 0.2s;
+}
+.background-music-toggle svg {
+  flex-shrink: 0;
 }
 .background-music-toggle:hover {
   background: #eaf0f2;
 }
+.background-music-toggle[aria-pressed="true"] {
+  background: var(--blue);
+  color: #fff;
+}
+.background-music-toggle[aria-pressed="true"]:hover {
+  background: #254862;
+}
 @media (max-width: 600px) {
   .background-music-toggle {
-    left: 14px;
-    bottom: max(14px, env(safe-area-inset-bottom));
-    padding: 11px 13px;
-    font-size: 9px;
+    left: max(12px, env(safe-area-inset-left));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    width: 44px;
+    height: 44px;
+    padding: 0;
+  }
+  .background-music-toggle > span {
+    display: none;
   }
 }
 @media (prefers-reduced-motion: reduce) {

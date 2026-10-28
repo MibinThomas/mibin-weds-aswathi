@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import {
   Cormorant_Garamond,
-  Great_Vibes,
   Plus_Jakarta_Sans,
 } from "next/font/google";
 import "./globals.css";
@@ -18,13 +17,6 @@ const jakarta = Plus_Jakarta_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
-
-const script = Great_Vibes({
-  variable: "--font-script",
-  subsets: ["latin"],
-  weight: ["400"],
   display: "swap",
 });
 
@@ -54,7 +46,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${cormorant.variable} ${jakarta.variable} ${script.variable} scroll-smooth h-full antialiased`}
+      className={`${cormorant.variable} ${jakarta.variable} scroll-smooth h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-background text-foreground transition-colors duration-500">
         <BackgroundMusic />

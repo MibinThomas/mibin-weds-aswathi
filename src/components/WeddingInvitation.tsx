@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+
 import { copy as t } from "@/lib/copy";
 import CulturalBlessing from "@/components/CulturalBlessing";
 import {
@@ -12,7 +12,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowDown,
-  ArrowLeft,
+
   ArrowRight,
   ArrowUpRight,
   CalendarDays,
@@ -309,14 +309,6 @@ export default function WeddingInvitation({ side }: { side: InvitationSide }) {
             ))}
           </nav>
           <div className="header-actions">
-            <Link
-              href="/"
-              className="invitation-switch"
-              aria-label={t.chooseOther}
-            >
-              <ArrowLeft size={14} />
-              <span>{t.choose}</span>
-            </Link>
             <button
               className="share-button"
               onClick={shareInvitation}
@@ -356,10 +348,6 @@ export default function WeddingInvitation({ side }: { side: InvitationSide }) {
               {t.findVenue}
               <ArrowUpRight size={16} />
             </a>
-            <Link href="/" onClick={() => setMenuOpen(false)}>
-              {t.chooseOther}
-              <ArrowUpRight size={16} />
-            </Link>
           </nav>
         )}
       </header>
