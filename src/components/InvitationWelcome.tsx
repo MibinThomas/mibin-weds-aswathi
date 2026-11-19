@@ -24,7 +24,7 @@ export default function InvitationWelcome() {
         </Link>
         <p>{t.twoFamilies}</p>
       </header>
-      <main className="invitation-welcome" id="choose-invitation">
+      <main className="invitation-welcome" id="choose-invitation" tabIndex={-1}>
         <Image
           className="welcome-garland floral"
           src="/images/floral-garland.png"

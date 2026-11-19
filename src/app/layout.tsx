@@ -5,7 +5,9 @@ import {
   Plus_Jakarta_Sans,
 } from "next/font/google";
 import "./globals.css";
+import "./cinematic.css";
 import BackgroundMusic from "@/components/BackgroundMusic";
+import CinematicExperience from "@/components/CinematicExperience";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-serif",
@@ -59,7 +61,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-sans bg-background text-foreground transition-colors duration-500">
         <BackgroundMusic />
-        {children}
+        <CinematicExperience>{children}</CinematicExperience>
       </body>
     </html>
   );

@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Pause, Play } from "lucide-react";
 
-const musicUrl = "/images/One-Love-Emotional-Piano-Strings(chosic.com).mp3";
+const musicUrl = "/audio/celebration.wav";
 
 export default function BackgroundMusic() {
   const pathname = usePathname();
@@ -16,7 +16,7 @@ export default function BackgroundMusic() {
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
-    audio.volume = 0.35;
+    audio.volume = 0.25;
     if (musicEnabled && !userPaused.current) {
       void audio.play().catch(() => {
         /* The play control remains available if autoplay is blocked. */
@@ -37,7 +37,7 @@ export default function BackgroundMusic() {
         (musicEnabled || href === "/" || href === "/groom" || href === "/bride") &&
         audioRef.current?.paused
       ) {
-        audioRef.current.volume = 0.35;
+        audioRef.current.volume = 0.25;
         void audioRef.current.play().catch(() => {});
       }
     };

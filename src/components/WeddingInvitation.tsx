@@ -352,7 +352,7 @@ export default function WeddingInvitation({ side }: { side: InvitationSide }) {
         )}
       </header>
 
-      <main id="main">
+      <main id="main" tabIndex={-1}>
         <section
           id="invitation"
           className="hero section-container"
