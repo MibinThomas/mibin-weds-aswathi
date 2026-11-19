@@ -413,13 +413,13 @@ export default function WeddingInvitation({ side }: { side: InvitationSide }) {
             </div>
             <Floral className="hero-garland" garland priority />
             <Image
-              className="couple-illustration"
-              src="/images/couple.png"
+              className="hero-photo"
+              src="/images/us.jpeg"
               alt={t.coupleAlt}
-              width={439}
-              height={447}
+              width={879}
+              height={756}
               priority
-              sizes="(max-width: 600px) 56vw, 290px"
+              sizes="(max-width: 600px) 78vw, 390px"
             />
             <Floral className="hero-floral-left" priority />
             <Floral className="hero-floral-right" priority />

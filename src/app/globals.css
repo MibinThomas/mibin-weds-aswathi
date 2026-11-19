@@ -461,21 +461,28 @@ section[id] {
   max-width: none;
   z-index: 4;
 }
-.couple-illustration {
+.hero-photo {
   position: absolute;
-  bottom: 40px;
+  bottom: 48px;
   left: 50%;
   transform: translateX(-50%);
-  width: 245px;
-  z-index: 2;
-  filter: drop-shadow(0 8px 5px #5368790c);
+  width: min(80%, 390px);
+  height: 355px;
+  object-fit: cover;
+  object-position: center;
+  padding: 8px;
+  background: #fffefa;
+  border: 1px solid #b4c6cf;
+  box-shadow: 0 12px 25px #5368791c;
+  border-radius: 48% 48% 7px 7px;
+  z-index: 3;
 }
 .hero-floral-left {
   position: absolute;
   left: -3%;
   bottom: 9px;
   width: 47%;
-  z-index: 3;
+  z-index: 2;
   transform: rotate(-19deg);
 }
 .hero-floral-right {
@@ -483,7 +490,7 @@ section[id] {
   right: -3%;
   bottom: 9px;
   width: 47%;
-  z-index: 3;
+  z-index: 2;
   transform: scaleX(-1) rotate(-19deg);
 }
 .art-caption {
@@ -872,19 +879,19 @@ section[id] {
 }
 .wishes-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 110px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(340px, 1.1fr);
+  gap: clamp(48px, 8vw, 110px);
   align-items: start;
-  max-width: 980px;
+  max-width: 1040px;
 }
 .wishes-copy h2 {
   margin: 14px 0 22px;
 }
 .wishes-copy > p:not(.eyebrow):not(.storage-note) {
-  font-size: 12px;
-  line-height: 2;
+  font-size: 15px;
+  line-height: 1.8;
   color: #4d6678;
-  max-width: 370px;
+  max-width: 430px;
 }
 .ornament {
   display: flex;
@@ -899,12 +906,13 @@ section[id] {
   background: #b8c8d0;
 }
 .storage-note {
-  font-size: 9px;
-  line-height: 1.8;
+  font-size: 12px;
+  line-height: 1.7;
   color: #506977;
+  max-width: 430px;
 }
 .wish-form {
-  padding: 36px;
+  padding: clamp(28px, 4vw, 44px);
   background: var(--paper);
   border: 1px solid #cdd9df;
   box-shadow: 8px 8px 0 #e0e8ec;
@@ -916,14 +924,16 @@ section[id] {
   color: #6b8da6;
 }
 .wish-form h3 {
-  font-size: 32px;
-  margin: 11px 0 28px;
+  font-size: clamp(32px, 3.2vw, 40px);
+  line-height: 1.1;
+  margin: 13px 0 30px;
 }
 .wish-form label,
 .share-dialog label {
-  font-size: 9px;
-  letter-spacing: 1px;
-  margin-bottom: 9px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  margin-bottom: 8px;
 }
 .wish-form input,
 .wish-form textarea,
@@ -932,10 +942,11 @@ section[id] {
   background: transparent;
   border-radius: 0;
   width: 100%;
-  padding: 13px;
-  font-size: 11px;
+  padding: 13px 14px;
+  font-size: 15px;
+  line-height: 1.55;
   color: var(--ink);
-  margin-bottom: 23px;
+  margin-bottom: 24px;
   resize: vertical;
   transition: border-color 0.2s;
 }
@@ -945,7 +956,7 @@ section[id] {
   opacity: 1;
 }
 .wish-form textarea {
-  min-height: 110px;
+  min-height: 132px;
 }
 .wish-form input:focus,
 .wish-form textarea:focus {
@@ -958,7 +969,7 @@ section[id] {
   justify-content: space-between;
 }
 .form-status {
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.8;
   margin-top: 14px;
   color: #436276;
@@ -967,26 +978,30 @@ section[id] {
   display: none;
 }
 .wish-list {
-  margin-top: 28px;
-  max-height: 350px;
+  margin-top: 32px;
+  max-height: clamp(250px, 34vh, 390px);
   overflow: auto;
-  padding-right: 8px;
+  padding: 2px 12px 2px 2px;
+  scrollbar-color: #a8bdc8 transparent;
 }
 .wish-list blockquote {
-  margin: 0 0 15px;
-  padding: 14px 0 14px 17px;
-  border-left: 1px solid #9db3c1;
+  margin: 0 0 16px;
+  padding: 18px 19px;
+  border: 1px solid #c7d6dd;
+  border-left: 3px solid #8faaba;
+  background: #f5f8f7a8;
 }
 .wish-list blockquote p {
   font-family: var(--font-serif), serif;
-  font-size: 20px;
-  line-height: 1.5;
+  font-size: 22px;
+  line-height: 1.45;
   overflow-wrap: anywhere;
 }
 .wish-list cite {
   display: block;
-  font-size: 9px;
-  margin-top: 9px;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 11px;
   font-style: normal;
   overflow-wrap: anywhere;
 }
@@ -1417,8 +1432,9 @@ section[id] {
   .arch-outline {
     inset-inline: 31px;
   }
-  .couple-illustration {
-    width: 270px;
+  .hero-photo {
+    width: min(82%, 410px);
+    height: 390px;
   }
   .hero-floral-left,
   .hero-floral-right {
@@ -1467,8 +1483,9 @@ section[id] {
   .arch-script {
     font-size: 46px;
   }
-  .couple-illustration {
-    width: 215px;
+  .hero-photo {
+    width: 78%;
+    height: 325px;
   }
   .hero-floral-left,
   .hero-floral-right {
@@ -1484,6 +1501,9 @@ section[id] {
   .story-grid,
   .wishes-grid {
     gap: 65px;
+  }
+  .wishes-grid {
+    gap: clamp(42px, 6vw, 65px);
   }
   .story-copy h2 {
     font-size: 57px;
@@ -1585,8 +1605,10 @@ section[id] {
     left: -3%;
     width: 106%;
   }
-  .couple-illustration {
-    width: 185px;
+  .hero-photo {
+    width: 78%;
+    height: 286px;
+    bottom: 33px;
   }
   .hero-floral-left,
   .hero-floral-right {
@@ -1644,6 +1666,12 @@ section[id] {
   .wishes-grid {
     gap: 38px;
   }
+  .wishes-grid {
+    grid-template-columns: minmax(0, 680px);
+    gap: 48px;
+    max-width: 680px;
+    margin-inline: auto;
+  }
   .story-circle {
     width: 240px;
     height: 240px;
@@ -1663,6 +1691,7 @@ section[id] {
   }
   .wish-form {
     padding: 27px;
+    width: 100%;
   }
   .wish-form h3 {
     font-size: 27px;
@@ -1806,8 +1835,9 @@ section[id] {
     font-size: 22px;
     margin-top: 5px;
   }
-  .couple-illustration {
-    width: 190px;
+  .hero-photo {
+    width: 78%;
+    height: 286px;
     bottom: 32px;
   }
   .hero-floral-left,
@@ -1980,10 +2010,15 @@ section[id] {
     opacity: 0.19;
     bottom: 10px;
   }
-  .story-grid,
-  .wishes-grid {
+  .story-grid {
     grid-template-columns: 1fr;
     gap: 50px;
+  }
+  .wishes-grid {
+    grid-template-columns: minmax(0, 680px);
+    gap: 48px;
+    max-width: 680px;
+    margin-inline: auto;
   }
   .story-art {
     min-height: 315px;
@@ -2023,7 +2058,7 @@ section[id] {
     margin-top: 20px;
   }
   .wishes-grid {
-    gap: 32px;
+    gap: 42px;
   }
   .wishes-copy {
     text-align: center;
@@ -2040,9 +2075,9 @@ section[id] {
     margin-block: 22px;
   }
   .wish-form {
-    width: min(380px, 100%);
-    margin-inline: auto;
-    padding: 28px;
+    width: 100%;
+    margin-inline: 0;
+    padding: 32px;
   }
   .wish-form h3 {
     font-size: 32px;
@@ -2059,7 +2094,7 @@ section[id] {
   }
   .wish-list {
     text-align: left;
-    max-height: 300px;
+    max-height: 330px;
   }
   .venue-panel {
     grid-template-columns: 1fr;
@@ -2158,8 +2193,9 @@ section[id] {
   .arch-script {
     font-size: 39px;
   }
-  .couple-illustration {
-    width: 170px;
+  .hero-photo {
+    width: 80%;
+    height: 260px;
   }
   .date-ribbon {
     gap: 9px;
