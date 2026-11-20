@@ -14,6 +14,24 @@ export default function BackgroundMusic() {
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
+    let frame = 0;
+    const pageTurn = () => {
+      const audio = audioRef.current;
+      if (!audio || audio.paused || userPaused.current || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      cancelAnimationFrame(frame);
+      const start = performance.now();
+      const fade = (now: number) => {
+        const progress = Math.min(1, (now - start) / 900);
+        audio.volume = 0.25 - Math.sin(progress * Math.PI) * 0.07;
+        if (progress < 1) frame = requestAnimationFrame(fade);
+      };
+      frame = requestAnimationFrame(fade);
+    };
+    window.addEventListener("invitation:page-turn", pageTurn);
+    return () => { cancelAnimationFrame(frame); window.removeEventListener("invitation:page-turn", pageTurn); };
+  }, []);
+
+  useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
     audio.volume = 0.25;
@@ -78,9 +96,7 @@ export default function BackgroundMusic() {
           title={playing ? "Pause background music" : "Play background music"}
           aria-pressed={playing}
         >
-          {playing ? <Pause size={16} aria-hidden="true" /> : <Play size={16} aria-hidden="true" />}
-          <span>Music</span>
-
+          {playing ? <Pause size={12} strokeWidth={1.4} aria-hidden="true" /> : <Play size={12} strokeWidth={1.4} aria-hidden="true" />}
         </button>
       )}
     </>

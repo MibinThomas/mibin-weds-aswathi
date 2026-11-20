@@ -6,6 +6,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import "./cinematic.css";
+import "./invitation-book.css";
 import BackgroundMusic from "@/components/BackgroundMusic";
 import CinematicExperience from "@/components/CinematicExperience";
 

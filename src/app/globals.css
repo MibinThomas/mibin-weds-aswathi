@@ -2346,31 +2346,23 @@ section[id] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  min-height: 44px;
-  min-width: 44px;
-  padding: 10px 13px;
-  border: 1px solid #bdcdd6;
-  border-radius: 999px;
-  background: #fcfbf7f2;
-  color: var(--blue);
-  box-shadow: 0 3px 14px #27455d12;
-  font-size: 10px;
-  backdrop-filter: blur(10px);
-  transition: background 0.2s, color 0.2s;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #71818a;
+  box-shadow: none;
+  transition: color 0.2s;
 }
 .background-music-toggle svg {
   flex-shrink: 0;
 }
-.background-music-toggle:hover {
-  background: #eaf0f2;
-}
-.background-music-toggle[aria-pressed="true"] {
-  background: var(--blue);
-  color: #fff;
-}
-.background-music-toggle[aria-pressed="true"]:hover {
-  background: #254862;
+.background-music-toggle:hover,
+.background-music-toggle:focus-visible {
+  color: var(--blue);
+  background: #eaf0f266;
 }
 @media (max-width: 600px) {
   .background-music-toggle {

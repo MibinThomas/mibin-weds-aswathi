@@ -1,0 +1,93 @@
+﻿/* A fixed stage; only an overflowing chapter can scroll vertically. */
+body:has(.book-main) { overflow: hidden; }
+body:has(.book-main) .site-header { position: fixed; inset: 0 0 auto; height: 80px; z-index: 40; }
+body:has(.book-main) .header-inner { height: 100%; }
+body:has(.book-main) .desktop-nav { gap: clamp(10px, 1.3vw, 22px); }
+.site-header a[aria-current="page"] { color: #385f7d; text-decoration: underline; text-underline-offset: 8px; text-decoration-color: #b59b6a; }
+.book-main { position: fixed; inset: 80px 0 0; overflow: clip; }
+.invitation-book { height: 100%; --controls-height: calc(76px + env(safe-area-inset-bottom)); }
+.book-stage { position: absolute; inset: 0 0 var(--controls-height); perspective: 1600px; overflow: clip; }
+.book-page { position: absolute; inset: 0; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; touch-action: pan-y pinch-zoom; background: radial-gradient(ellipse at 85% 20%, #eaf0f299, transparent 60%), var(--paper); transform-origin: 0 50%; backface-visibility: hidden; scrollbar-width: thin; scrollbar-color: #bdcdd6 transparent; }
+.book-page:focus-visible { outline: 2px solid #b59b6a; outline-offset: -4px; }
+.book-page > section { min-height: 100%; padding-top: clamp(24px, 4vh, 48px); padding-bottom: 28px; margin-top: 0; margin-bottom: 0; }
+.book-page .section-heading { margin-bottom: 24px; }
+.book-page h2 { font-size: clamp(34px, 4.2vw, 56px); }
+.book-page .hero { min-height: 100%; padding-top: 20px; padding-bottom: 24px; }
+.book-page .hero-scroll { display: none; }
+.book-page .hero-art { height: 510px; }
+.book-page .hero-intro { margin: 12px 0; }
+.book-page .hero-date { margin-top: 16px; margin-bottom: 16px; }
+.book-page .hero h1 { font-size: clamp(42px, 4.8vw, 68px); }
+.book-page .celebration-grid { max-width: 900px; margin-inline: auto; gap: 40px; }
+.book-page .calendar-sheet { padding: 20px 28px; }
+.book-page .countdown-wrap { margin-top: 24px; }
+.book-page .countdown { margin-top: 12px; }
+.book-page .families-grid { margin-top: 24px; }
+.book-page .little-angels { margin-top: 24px; padding-top: 18px; }
+.book-page .story-section, .book-page .wishes-section { display: grid; align-items: center; }
+.book-page .closing-section { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.book-page .closing-garland { max-height: 130px; width: auto; }
+.book-gallery { text-align: center; }
+.book-gallery figure { margin: 0 auto; width: min(600px, 100%); }
+.book-gallery img { height: min(47vh, 450px); width: 100%; object-fit: contain; background: #eaf0f2; padding: 10px; border: 1px solid #bda87866; box-shadow: 0 18px 45px #27455d20; }
+.book-gallery figcaption { font-family: var(--font-serif), serif; font-style: italic; font-size: 21px; margin-top: 16px; }
+.book-rsvp .wish-form { max-width: 510px; margin: auto; padding: 24px; }
+.book-rsvp select { width: 100%; padding: 12px; color: var(--ink); background: var(--paper); border: 1px solid var(--line); font: inherit; }
+.book-controls { position: absolute; bottom: 0; height: var(--controls-height); width: 100%; display: flex; align-items: center; gap: 18px; padding: 10px max(24px, env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) 120px; background: #fcfbf7f5; border-top: 1px solid #bda87855; z-index: 10; }
+.book-controls > button { background: transparent; border: 1px solid #bda87866; border-radius: 50%; width: 44px; height: 44px; display: grid; place-items: center; flex-shrink: 0; }
+.book-controls button:disabled { opacity: .3; }
+.book-controls button:hover:not(:disabled) { background: #eaf0f2; }
+.book-controls > .book-next { border: 0; border-radius: 0; }
+.book-next svg { animation: book-arrow-glide 2.8s ease-in-out infinite; }
+@keyframes book-arrow-glide { 0%, 100% { transform: translateX(-2px); opacity: .6; } 50% { transform: translateX(3px); opacity: 1; } }
+/* Keep playback control available to keyboard and assistive technology without visible player chrome. */
+.book-controls > .book-autoplay:not(:focus-visible) { position: absolute; width: 1px; height: 1px; padding: 0; border: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.book-controls > .book-autoplay:focus-visible { position: absolute; bottom: calc(100% + 8px); right: 16px; width: auto; height: 44px; padding: 8px 16px; border-radius: 4px; background: var(--paper); font-size: 12px; }
+.book-chapter { min-width: 115px; display: grid; gap: 3px; font-family: var(--font-serif), serif; font-size: 19px; }
+.book-counter { font: 9px var(--font-body); letter-spacing: 2px; color: var(--muted); }
+.book-dots { display: flex; margin-inline: auto; }
+.book-dots button { background: transparent; width: 27px; height: 44px; display: grid; place-items: center; }
+.book-dots span { width: 5px; height: 5px; border-radius: 50%; background: #a9bbc5; transition: transform .3s, background .3s; }
+.book-dots button[aria-current] span { background: #92764a; transform: scale(1.8); box-shadow: 0 0 0 3px #bda87822; }
+.book-hint { font-size: 9px; color: var(--muted); }
+.book-progress { position: absolute; top: -2px; height: 2px; left: 0; right: 0; }
+.book-progress span { display: block; height: 100%; background: linear-gradient(90deg, #385f7d, #bda878); transform-origin: left; transition: transform .85s ease; }
+body:has(.book-main) .cinema-progress { display: none; }
+.book-page[data-active="true"] :is(.hero-copy, .section-heading, .story-copy, .wishes-copy, .venue-info) { animation: book-text-in .85s .12s both; }
+.book-page[data-active="true"] :is(.hero-art, .family, .wish-form, .calendar-sheet, .story-art, figure) { animation: book-text-in 1s .2s both; }
+.book-page[data-active="true"] .floral { animation: book-floral-in 1.2s .15s both; }
+@keyframes book-text-in { from { opacity: 0; translate: 30px 12px; } to { opacity: 1; translate: 0 0; } }
+@keyframes book-floral-in { from { opacity: 0; filter: blur(4px); } to { opacity: 1; filter: blur(0); } }
+@media (max-width: 1100px) {
+  body:has(.book-main) .desktop-nav { display: none; }
+  body:has(.book-main) .menu-toggle { display: flex; }
+  .book-hint { display: none; }
+}
+@media (max-width: 700px) {
+  body:has(.book-main) .site-header { height: 66px; }
+  .book-main { top: 66px; }
+  .invitation-book { --controls-height: calc(100px + env(safe-area-inset-bottom)); }
+  .book-controls { padding-left: 70px; padding-right: 16px; gap: 12px; padding-bottom: calc(32px + env(safe-area-inset-bottom)); }
+  .book-chapter { flex: 1; min-width: 0; text-align: center; font-size: 18px; }
+  .book-dots { position: absolute; bottom: env(safe-area-inset-bottom); left: 50%; transform: translateX(-50%); }
+  .book-dots button { height: 30px; }
+  body:has(.book-main) .background-music-toggle { bottom: calc(43px + env(safe-area-inset-bottom)); }
+  .book-page .hero { grid-template-columns: 1fr; gap: 24px; }
+  .book-page .hero-art { height: 400px; width: min(360px, 100%); margin-inline: auto; }
+  .book-page .hero h1 { font-size: 46px; }
+  .book-page .hero-copy { padding-top: 10px; }
+  .book-page > section { padding-top: 24px; }
+  .book-page .section-container { width: calc(100% - 36px); }
+  .book-page .celebration-grid { gap: 24px; }
+  .book-page .story-grid, .book-page .wishes-grid { gap: 28px; }
+  body:has(.book-main) .mobile-nav { max-height: calc(100dvh - 80px); overflow-y: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .book-next svg { animation: none; }
+  .book-page { transform: none !important; }
+  .book-page[data-active="true"] { opacity: 1 !important; }
+  .book-page[data-active="false"] { visibility: hidden !important; }
+  .book-page *, .book-page[data-active="true"] * { animation: none !important; }
+  .book-progress span, .book-dots span { transition: none; }
+}
+

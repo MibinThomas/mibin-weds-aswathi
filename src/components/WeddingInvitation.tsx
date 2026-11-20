@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import InvitationBook, { chapters } from "@/components/InvitationBook";
+import BookRsvp from "@/components/BookRsvp";
 
 import { copy as t } from "@/lib/copy";
 import CulturalBlessing from "@/components/CulturalBlessing";
@@ -11,7 +13,7 @@ import {
 } from "@/lib/invitations";
 import { useEffect, useRef, useState } from "react";
 import {
-  ArrowDown,
+
 
   ArrowRight,
   ArrowUpRight,
@@ -222,12 +224,8 @@ function Guestbook() {
 
 export default function WeddingInvitation({ side }: { side: InvitationSide }) {
   const invitation = getInvitation(side);
-  const navLinks = [
-    { label: t.navInvitation, href: "#invitation" },
-    { label: t.navCelebration, href: "#celebration" },
-    { label: t.navFamilies, href: "#families" },
-    { label: t.navWishes, href: "#wishes" },
-  ];
+  const [activePage, setActivePage] = useState("invitation");
+  const navLinks = chapters.map(([id, label]) => ({ label, href: `#${id}` }));
   const [menuOpen, setMenuOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const [shareUrl, setShareUrl] = useState("");
@@ -303,7 +301,7 @@ export default function WeddingInvitation({ side }: { side: InvitationSide }) {
           </a>
           <nav className="desktop-nav" aria-label={t.mainNav}>
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href}>
+              <a key={link.href} href={link.href} aria-current={link.href === `#${activePage}` ? "page" : undefined}>
                 {link.label}
               </a>
             ))}
@@ -338,6 +336,7 @@ export default function WeddingInvitation({ side }: { side: InvitationSide }) {
               <a
                 key={link.href}
                 href={link.href}
+                aria-current={link.href === `#${activePage}` ? "page" : undefined}
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
@@ -352,7 +351,8 @@ export default function WeddingInvitation({ side }: { side: InvitationSide }) {
         )}
       </header>
 
-      <main id="main" tabIndex={-1}>
+      <main id="main" className="book-main" tabIndex={-1}>
+        <InvitationBook onPageChange={setActivePage}>
         <section
           id="invitation"
           className="hero section-container"
@@ -398,9 +398,9 @@ export default function WeddingInvitation({ side }: { side: InvitationSide }) {
               <MapPin size={14} />
               {t.venue}
             </p>
-            <a className="button button-primary" href="#celebration">
+            <a className="button button-primary" href="#story">
               {t.invited}
-              <ArrowDown size={15} />
+              <ArrowRight size={15} />
             </a>
           </div>
           <div className="hero-art" aria-label={t.artLabel}>
@@ -429,20 +429,40 @@ export default function WeddingInvitation({ side }: { side: InvitationSide }) {
               <span />
             </div>
           </div>
-          <a className="hero-scroll" href="#celebration">
+          <a className="hero-scroll" href="#story">
             <span>{t.rememberDay}</span>
-            <ArrowDown size={14} />
+            <ArrowRight size={14} />
           </a>
         </section>
 
-        <div className="date-ribbon">
-          <span>{t.withLove}</span>
-          <Heart size={12} />
-          <p>{t.ribbon}</p>
-          <Heart size={12} />
-          <span>{t.withYou}</span>
-        </div>
 
+        <section id="story" className="story-section section-space">
+          <div className="section-container story-grid">
+            <div className="story-art">
+              <div className="story-circle">
+                <span>8</span>
+                <p>{t.years}</p>
+              </div>
+              <Floral className="story-floral" garland />
+              <span className="story-art-caption">{t.lifetime}</span>
+            </div>
+            <div className="story-copy">
+              <p className="eyebrow">{t.storyEyebrow}</p>
+              <h2>
+                {t.storyTitle}
+                <br />
+                {t.storyMiddle} <em>{t.storyEmphasis}</em>
+              </h2>
+              <p>{t.storyFirst}</p>
+              <p>{t.storySecond}</p>
+              <span className="story-signature">{invitation.signature}</span>
+              <a className="text-link" href="#wishes">
+                {t.storyAction}
+                <ArrowRight size={16} />
+              </a>
+            </div>
+          </div>
+        </section>
         <section id="celebration" className="celebration section-space">
           <div className="section-container">
             <div className="section-heading">
@@ -522,7 +542,6 @@ export default function WeddingInvitation({ side }: { side: InvitationSide }) {
             <Countdown />
           </div>
         </section>
-
         <section id="families" className="families-section section-space">
           <Floral className="family-floral-left" />
           <Floral className="family-floral-right" />
@@ -581,37 +600,11 @@ export default function WeddingInvitation({ side }: { side: InvitationSide }) {
             </div>
           </div>
         </section>
-
-        <section id="story" className="story-section section-space">
-          <div className="section-container story-grid">
-            <div className="story-art">
-              <div className="story-circle">
-                <span>8</span>
-                <p>{t.years}</p>
-              </div>
-              <Floral className="story-floral" garland />
-              <span className="story-art-caption">{t.lifetime}</span>
-            </div>
-            <div className="story-copy">
-              <p className="eyebrow">{t.storyEyebrow}</p>
-              <h2>
-                {t.storyTitle}
-                <br />
-                {t.storyMiddle} <em>{t.storyEmphasis}</em>
-              </h2>
-              <p>{t.storyFirst}</p>
-              <p>{t.storySecond}</p>
-              <span className="story-signature">{invitation.signature}</span>
-              <a className="text-link" href="#wishes">
-                {t.storyAction}
-                <ArrowRight size={16} />
-              </a>
-            </div>
-          </div>
+        <section id="gallery" className="book-gallery section-container">
+          <div className="section-heading"><p className="eyebrow">A glimpse of us</p><h2>One love. <em>A lifetime.</em></h2><p>A favourite moment, held close forever.</p></div>
+          <figure><Image src="/images/us.jpeg" alt={t.coupleAlt} width={879} height={756} sizes="(max-width: 600px) 90vw, 600px" /><figcaption>{invitation.signature} &middot; 28 December 2026</figcaption></figure>
         </section>
-
         <Guestbook />
-
         <section id="location" className="location-section section-space">
           <div className="section-container">
             <div className="section-heading">
@@ -681,8 +674,8 @@ export default function WeddingInvitation({ side }: { side: InvitationSide }) {
             </div>
           </div>
         </section>
-
-        <section className="closing-section">
+        <BookRsvp />
+        <section id="closing" className="closing-section">
           <Floral className="closing-garland" garland />
           <p className="eyebrow">{t.closingEyebrow}</p>
           <h2>
@@ -703,21 +696,9 @@ export default function WeddingInvitation({ side }: { side: InvitationSide }) {
             <ArrowUpRight size={15} />
           </a>
         </section>
-      </main>
 
-      <footer className="site-footer">
-        <a
-          className="footer-monogram"
-          href="#invitation"
-          aria-label={t.backTop}
-        >
-          {invitation.first.initial} {t.and} {invitation.second.initial}
-        </a>
-        <p>{t.footer}</p>
-        <span>
-          28 . 12 . 2026 <Heart size={11} />
-        </span>
-      </footer>
+        </InvitationBook>
+      </main>
 
       <dialog
         ref={dialogRef}
